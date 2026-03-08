@@ -1,8 +1,7 @@
 {
   "cSpell.words": [
     "asgi",
-    "boto",
-    "botocore",
+    "cloudinary",
     "createsuperuser",
     "djangorestframework",
     "FLAC",

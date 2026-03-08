@@ -1,0 +1,93 @@
+# Sportify Clone
+
+## Overview
+
+**Sportify** is a web-based music streaming application inspired by Spotify, offering a full range of features for music playback, song and album management, user interaction, and more.
+
+- 🎵 **Music Playback**: Play, pause, skip to next or previous tracks with full control
+- 🎧 **Now Playing View**: Display currently playing track with full song information
+- 📚 **Browse Songs and Albums**: Explore a library of music content
+- 🎤 **Song Detail Page**: View song lyrics and additional metadata
+- 💿 **Album Detail Page**: See album tracklist and details
+- 🔍 **Search**: Find songs, albums, and artists with ease
+- ❤️ **Like**: Mark songs and albums as favorites
+- 👤 **User & Artist Profiles**: View and manage personal or artist information
+- 🔐 **Authentication System**: Secure sign-up and sign-in for users
+- 💬 **Live Chat**: Send and receive messages between users in real time
+- 📱 **Responsive Design**: Mobile-friendly interface that works on all screen sizes
+
+## Technologies Used
+
+- **django-cors-headers** - Handle Cross-Origin Resource Sharing (CORS) in Django applications
+- **cloudinary** - Cloudinary SDK for media file storage and management
+- **channels** - Django support for WebSockets and real-time features
+- **Django** - Main web framework
+- **djangorestframework_simplejwt** - JWT Authentication for DRF
+- **mutagen** - Audio metadata handling (e.g. MP3, FLAC tags)
+- **PyMySQL** - MySQL client library for Python
+- **python-dotenv** - Load environment variables from .env files
+- **requests** - HTTP requests library
+- **daphne** - ASGI server for Django, enabling asynchronous communication and WebSockets.
+
+## Installation
+
+### Prerequisites
+
+- ✅ **Python 3.8 or higher** (Python **3.10+ is recommended** for best compatibility and performance)
+- ✅ **pip** or **pipenv** for managing Python dependencies
+- ✅ **MySQL 8.0 or higher** (MySQL **8.0+ is recommended** for full feature support)
+
+### Steps
+
+1. Clone the repository and navigate to the backend folder:
+
+```bash
+git clone https://github.com/Hai1205/Sportify.git
+cd backend
+```
+
+2. Create and active virtual environment:
+
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+3. Create and configure a `.env` file with the following variables from `.env.example`
+
+4. Create database on MySQL:
+
+```bash
+CREATE DATABASE sportify CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+5. Running migrate and create admin account
+
+a. Run at local
+
+```bash
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+b. Run by docker 
+
+```bash
+docker compose exec backend python manage.py migrate
+docker compose exec backend python manage.py createsuperuser
+```
+
+7. Running backend:
+
+```bash
+python manage.py runserver
+```
+
+8. Running WebSocket (ASGI):
+   open other terminal window to run venv and run the following command:
+
+```bash
+daphne -p 8001 backend.asgi:application
+```
+

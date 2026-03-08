@@ -1,0 +1,10 @@
+django-cors-headers==4.7.0
+cloudinary==1.41.0
+channels==4.2.0
+Django==5.1.6
+djangorestframework_simplejwt==5.5.0
+mutagen==1.47.0
+PyMySQL==1.1.1
+python-dotenv==1.1.0
+Requests==2.32.3
+daphne==4.1.2
